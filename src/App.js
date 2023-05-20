@@ -3,7 +3,7 @@ import Employee from './components/Employee';
 import { useState } from 'react';
 
 function App() {
-  let role = "dev";
+  const [role, setRole] = useState();
   const showEmployees = true;
   return (
     <div className="App">
@@ -13,7 +13,7 @@ function App() {
         
         <input type="text" onChange={(e)=>{
           console.log(e.target.value);
-          role = e.target.value;
+          setRole(e.target.value);
         }}/>
           <Employee name="Isus" role = "Intern"/>
           <Employee name="Denis" role = {role} />
